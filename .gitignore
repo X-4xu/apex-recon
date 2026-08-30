@@ -1,0 +1,28 @@
+# APEX Run Directories & Outputs
+apex_runs/
+.state/
+raw/
+db/
+evidence/
+reports/
+screenshots/
+logs/
+
+# Log Files
+*.log
+*.tsv
+*.ndjson
+
+# Tool Output Artifacts
+sqlmap/
+.sqlmap/
+nuclei_output/
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini

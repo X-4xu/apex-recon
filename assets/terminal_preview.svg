@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480">
+  <defs>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#0B0F19" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Window Shadow & Background -->
+  <rect x="10" y="10" width="880" height="460" rx="10" fill="url(#termBg)" stroke="#1E293B" stroke-width="1.5" />
+  
+  <!-- Titlebar -->
+  <rect x="10" y="10" width="880" height="38" rx="10" fill="#1E293B" />
+  <!-- Rect overlay to square bottom corners of titlebar -->
+  <rect x="10" y="38" width="880" height="10" fill="#1E293B" />
+  
+  <!-- Window Controls -->
+  <circle cx="34" cy="29" r="6" fill="#EF4444" />
+  <circle cx="54" cy="29" r="6" fill="#F59E0B" />
+  <circle cx="74" cy="29" r="6" fill="#10B981" />
+  
+  <text x="450" y="33" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" fill="#94A3B8" text-anchor="middle">
+    bash &mdash; apex.sh scan example.com --authorized=true
+  </text>
+  
+  <!-- Terminal Content -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="13" line-height="1.6">
+    <!-- Command Prompt -->
+    <text x="30" y="80" fill="#38BDF8">$ <tspan fill="#F8FAFC">./apex.sh scan example.com --authorized=true</tspan></text>
+    
+    <!-- Logs -->
+    <text x="30" y="110" fill="#64748B">[00:00:01] <tspan fill="#38BDF8">INFO </tspan> [apex] Scope loaded: example.com (fail-closed guard active)</text>
+    <text x="30" y="132" fill="#64748B">[00:00:02] <tspan fill="#38BDF8">INFO </tspan> [apex] [P1] Subdomain enumeration: subfinder, amass, crt.sh &amp; native brute</text>
+    <text x="30" y="154" fill="#64748B">[00:00:05] <tspan fill="#38BDF8">INFO </tspan> [apex] [P1] Hosts discovered in-scope: 142 hosts</text>
+    <text x="30" y="176" fill="#64748B">[00:00:07] <tspan fill="#38BDF8">INFO </tspan> [apex] [P3] Probing live HTTP assets (rate=150 req/s, threads=15)</text>
+    <text x="30" y="198" fill="#64748B">[00:00:11] <tspan fill="#38BDF8">INFO </tspan> [apex] [P4] Deep crawling endpoints &amp; archive mining: 2,180 URLs</text>
+    <text x="30" y="220" fill="#64748B">[00:00:14] <tspan fill="#38BDF8">INFO </tspan> [apex] [P5] JavaScript static analysis &amp; Shannon entropy secret mining</text>
+    <text x="30" y="242" fill="#64748B">[00:00:18] <tspan fill="#38BDF8">INFO </tspan> [apex] [P17] Content signature verification (raw evidence hashing)</text>
+    <text x="30" y="264" fill="#64748B">[00:00:21] <tspan fill="#38BDF8">INFO </tspan> [apex] [P15b] Correlating multi-signal attack chains &amp; deduping</text>
+    <text x="30" y="286" fill="#64748B">[00:00:23] <tspan fill="#38BDF8">INFO </tspan> [apex] [P16] Generating HTML, Markdown, and NDJSON telemetry reports</text>
+    
+    <!-- Findings Box / Summary -->
+    <rect x="30" y="310" width="840" height="130" rx="6" fill="#0A0F1D" stroke="#1E293B" stroke-width="1" />
+    
+    <text x="50" y="336" fill="#22D3EE" font-weight="bold">=== APEX EVIDENCE-GATED ASSESSMENT SUMMARY ===</text>
+    
+    <text x="50" y="362" fill="#E2E8F0">&bull; Scope: <tspan fill="#38BDF8">example.com</tspan> &bull; Duration: <tspan fill="#94A3B8">24s</tspan> &bull; Total Assets: <tspan fill="#94A3B8">142 hosts / 2,180 URLs</tspan></text>
+    
+    <text x="50" y="388" fill="#F87171">[CRITICAL]</text>
+    <text x="140" y="388" fill="#F1F5F9">exposed-file &mdash; https://api.example.com/.env</text>
+    <text x="560" y="388" fill="#10B981">[CONFIRMED 96/100 &bull; Signature Verified]</text>
+    
+    <text x="50" y="412" fill="#FBBF24">[MEDIUM]</text>
+    <text x="140" y="412" fill="#F1F5F9">graphql-introspection &mdash; https://app.example.com/graphql</text>
+    <text x="560" y="412" fill="#38BDF8">[TOOL-VERIFIED 82/100 &bull; Schema Hash]</text>
+    
+    <text x="50" y="430" fill="#64748B" font-size="11">Reports written: ./apex_runs/example.com_20260828/reports/report.html (Interactive)</text>
+  </g>
+</svg>
